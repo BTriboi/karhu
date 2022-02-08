@@ -1,116 +1,175 @@
 .container {
-  padding: 0 2rem;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
 }
 
+/* Hero component styles begin here */
+
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
   display: flex;
+  height: 80vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 34px 0;
+}
+.main img {
+  position: absolute;
+  z-index: -1;
+  object-fit: cover;
+  width: 100%;
+  height: 80vh;
+}
+.main .title {
+  color: #fff;
+  font-size: 10vh;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0rem;
+  font-weight: 700;
+  word-spacing: -2px;
+  margin-top: 5rem;
 }
 
-.footer {
+.main .shopHeroButton {
+  color: #fff;
+  font-size: 16px;
+  border: 1px solid #fff;
+  padding: 12px 10vw 17px 10vw;
+  transition: all 400ms ease;
+  text-align: center;
+  margin-bottom: 3.8rem;
+}
+.main a {
+  user-select: none;
+  transition: all 400ms ease;
+}
+.main .shopHeroButton:hover,
+.main .downArrowHero:hover {
+  opacity: 0.7;
+}
+
+/* Collection component styles begin here */
+.collections {
+  position: relative;
   display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  transition: all 400ms ease;
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+.collections div {
+  position: relative;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.collections div,
+.collections img {
+  width: 360px;
+  height: 500px;
+  margin: 1rem;
+  object-fit: cover;
+  transition: all 400ms ease;
+  z-index: 1;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+.collections h1 {
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 12rem;
 }
 
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+.collections div span {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, -30%);
 }
 
-.title,
-.description {
+.collections div span a {
+  opacity: 0;
+  transition: 500ms ease-out;
+}
+
+.collections div:hover span a {
+  opacity: 1;
+}
+
+.shopColButton {
+  color: #fff;
+  font-size: 16px;
+  border: 1px solid #fff;
+  padding: 12px 30px;
+  transition: all 500ms ease;
   text-align: center;
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+.shopColButton:hover {
+  opacity: 0.7;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+.rightArrow {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  z-index: 2;
+  cursor: pointer;
+  user-select: none;
+  transition: all 500ms ease;
+}
+.rightArrow:hover {
+  opacity: 0.7;
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+.colContainer {
+  position: relative;
+  margin: 0 2rem 5rem 2rem;
+}
+/* Media */
+
+@media (max-width: 376px) {
+  .main img {
+    object-position: 25%;
+  }
+  .main,
+  .main img {
+    height: 500px;
+  }
+  .main .title {
+    font-size: 60px;
+  }
+
+  .collections div,
+  .collections img {
+    width: 250px;
+    height: 350px;
+  }
+
+  .collections h1 {
+    margin-bottom: 6rem;
+  }
+  .collections div span a {
+    opacity: 1;
+  }
+
+  .shopColButton {
+    padding: 12px 2;
+  }
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-}
+@media (max-width: 520px) {
+  .main img {
+    object-position: 15%;
+  }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
+  .collections {
+    overflow-x: scroll;
+  }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+  .rightArrow {
+    display: none;
   }
 }
