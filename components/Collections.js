@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "../../styles/Home.module.css";
+import styles from "../styles/Home.module.css";
 // import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
@@ -30,19 +30,17 @@ const Collections = ({ collections }) => {
       <div ref={slideRef} className={styles.collections} id="collections">
         {collections.map((collection) => {
           return (
-            <>
-              {
-                <div key={collection.id} style={{ transform: `${translate}` }}>
-                  <img src={collection.image.src} alt="" />
-                  <span>
-                    <h1>{collection.title}</h1>
-                    <a href="#" className={styles.shopColButton}>
-                      Shop Now
-                    </a>
-                  </span>
-                </div>
-              }
-            </>
+            <span key={collection.id}>
+              <div style={{ transform: `${translate}` }}>
+                <img src={collection.image.src} alt="" />
+                <span>
+                  <h1>{collection.title}</h1>
+                  <a href="#" className={styles.shopColButton}>
+                    Shop Now
+                  </a>
+                </span>
+              </div>
+            </span>
           );
         })}
       </div>

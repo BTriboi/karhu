@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Collections from "../src/components/Collections";
-import HeroSection from "../src/components/HeroSection";
+import Collections from "../components/Collections";
+import HeroSection from "../components/HeroSection";
 import styles from "./../styles/Home.module.css";
 import { client } from "../utils/shopify";
 
@@ -23,8 +23,10 @@ export default function Home({ collections }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const collections = await client.collection.fetchAll();
 
-  return { props: { collections: JSON.parse(JSON.stringify(collections)) } };
+  return {
+    props: { collections: JSON.parse(JSON.stringify(collections)) },
+  };
 }
