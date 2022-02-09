@@ -5,8 +5,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 
 const Collections = ({ collections }) => {
-  const slideRef = useRef();
-  const rightArrow = useRef();
+  const slideRef = useRef(null);
+  const rightArrow = useRef(null);
 
   const [translate, setTranslate] = useState("");
 

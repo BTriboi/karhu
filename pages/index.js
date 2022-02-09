@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Collections from "./components/Collections";
-import HeroSection from "./components/HeroSection";
+import Collections from "../src/components/Collections";
+import HeroSection from "../src/components/HeroSection";
 import styles from "./../styles/Home.module.css";
 import { client } from "../utils/shopify";
 
