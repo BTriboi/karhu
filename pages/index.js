@@ -23,7 +23,7 @@ export default function Home({ collections }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const collections = await client.collection.fetchAll();
 
   return { props: { collections: JSON.parse(JSON.stringify(collections)) } };

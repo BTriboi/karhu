@@ -3,5 +3,5 @@ module.exports = {
   images: {
     domains: ["cdn.shopify.com"],
   },
-  distDir: "build",
+  distDir: "out",
 };
